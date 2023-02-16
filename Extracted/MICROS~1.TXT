@@ -1,0 +1,33 @@
+Microsoft Visual Basic 1.0 Professional for MS-DOS
+Released in 1992 by Microsoft
+For DOS
+
+First released in 1991, Microsoft Visual Basic was a programming
+environment where one could build an application by visually creating
+the user interface first, and then adding code. In contrast, even the
+smallest Visual Basic basic programs could take reams of program code
+to write in C or C++. Visual Basic was extremely popular for business
+application programming. The language itself was an interpreted BASIC
+dialect, however speed was maintained through the use of reusable
+compiled libraries (DLLs and VBX controls). These however, limited
+application development to Microsoft Windows.
+
+Visual Basic easily interfaced with many database products (most
+notably Microsoft Access) and reporting tools (most notably Crystal
+Reports)
+
+Visual Basic 3 was the most popular version under 16-bit Windows 3.1,
+while Visual Basic 6 was the most popular for 32-bit Windows 95/NT
+and later. After version 6, Visual Basic was replaced by Visual Basic
+.NET, an incompatible successor.
+
+Microsoft Visual Basic 1.0 for DOS is unique in that it was the only
+version released for something other than Microsoft Windows. VB for
+DOS uses the text video mode, but provides forms and UI controls
+similar to Windows. This product replaces Microsoft BASIC
+Professional Development System 7.1.
+
+The professional version contains CodeView, Source Profiler, database 
+libraries, and many additional samples and libraries.
+
+Note: Every copy of SETUP.EXE contains a unique serial number.

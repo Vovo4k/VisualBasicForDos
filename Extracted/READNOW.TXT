@@ -1,0 +1,19 @@
+
+
+  Welcome to the Microsoft Visual Basic Programming System for MS-DOS
+  -------------------------------------------------------------------
+
+  To install Visual Basic for MS-DOS, insert Disk 1 into your floppy drive
+  and type "SETUP".  You MUST run Setup to install Visual Basic since the
+  distribution files are compressed.
+
+  If Setup does not work on your machine, remove all TSR programs from 
+  memory and try Setup again or copy ALTSETUP.BAT from Disk 1 to your hard
+  disk and run ALTSETUP.  Note, Setup will not install to a removable hard
+  drive - ALTSETUP.BAT must be used.
+
+  A complete list of files shipped with this product is contained in
+  the PACKING.TXT file on Disk 1. 
+
+  Additional release notes and product information can be found in the 
+  README.TXT file installed by Setup.
