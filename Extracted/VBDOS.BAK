@@ -1,0 +1,1123 @@
+;
+; INFORMATION FILE FOR VISUAL BASIC FOR MS-DOS PROFESSIONAL EDITION 1.00 SETUP
+;
+
+[macro]
+; default directory names (must end with \)
+DEFDIRBIN  = "C:\VBDOS\"
+DEFDIRINC  = "C:\VBDOS\"
+DEFDIRHELP = "C:\VBDOS\"
+DEFDIRLIB  = "C:\VBDOS\"
+DIRFORBIN  = "Directory for Executable files: "
+DIRFORLIB  = "Directory for Library files:    "
+DIRFORINC  = "Directory for Include files:    "
+DIRFORHELP = "Directory for Help files:       "
+ISAMSTYLE  = "ISAM Character Set:             "
+MATHPACK   = "Math Library Options:           "
+ISAM1 = "English, French, German, Italian, Portuguese"
+ISAM2 = "Dutch"
+ISAM3 = "Danish, Finnish, Icelandic, Norwegian, Swedish"
+ISAM4 = "Spanish"
+MATH1 = "80x87 or Emulator Math"
+MATH2 = "Alternate Math"
+MATH3 = "Emulator and Alternate Math"
+
+PACKINGLIST = "PACKING.TXT"
+READMEFILE  = "README.TXT"
+SUINIFNAME  = "SETUP.INI"
+SUINIDISK   = "1"
+EXEFNAME1   = "VBDOS.EXE"
+EXEFNAME2   = "FD.EXE"
+COPYRIGHT   = "Copyright (C) 1982-1992 Microsoft Corporation. All rights reserved."
+
+; filename of linker, and backup name used during version checking
+LINK_NAME      = "link.exe"
+TEMP_LINK_NAME = "$$$link.tmp"
+
+; name of Mouse Driver program
+MOUSE_DRIVER   = "mouse.com"
+
+TEMP           = ""
+
+; SERIALNUM and OWNER are set by setup; must define macro name here
+SERIALNUM   = ""
+; OWNER not used anywhere at present
+OWNER       = ""
+
+; ************** lists ********************
+
+[list ddisks]
+1:x,  "dummy"
+[list sdisks]
+0:dos, "Your DOS System Disk"
+1:epaa_1,"Disk #1"
+2:epaa_2,"Disk #2"
+3:epaa_3,"Disk #3"
+4:epaa_4,"Disk #4"
+5:epaa_5,"Disk #5"
+6:epaa_6,"Disk #6"
+7:epaa_7,"Disk #7"
+
+[list copy_always 1]
+3:87.li$,"87.lib", DEST=L, RENAME, TIMESTAMP, size=4633
+2:ADVISOR.HL$,"ADVISOR.HLP", DEST=H, RENAME, TIMESTAMP, size=27076
+1:bc.ex$,"bc.exe", DEST=B, RENAME, TIMESTAMP, size=150562
+3:bookcard.fr$,"bookcard.frm", DEST=I, RENAME, TIMESTAMP, size=10225
+3:bookgen.ba$,"bookgen.bas", DEST=I, RENAME, TIMESTAMP, size=21137
+3:booklist.fr$,"booklist.frm", DEST=I, RENAME, TIMESTAMP, size=4406
+3:booklook.bi$,"booklook.bi", DEST=I, RENAME, TIMESTAMP, size=2220
+3:booklook.fr$,"booklook.frm", DEST=I, RENAME, TIMESTAMP, size=14411
+3:booklook.ma$,"booklook.mak", DEST=I, RENAME, TIMESTAMP, size=83
+4:books.md$,"books.mdb", DEST=I, RENAME, TIMESTAMP, size=98304
+2:booksrch.fr$,"booksrch.frm", DEST=I, RENAME, TIMESTAMP, size=7560
+2:bookstck.fr$,"bookstck.frm", DEST=I, RENAME, TIMESTAMP, size=11325
+2:buildrtm.ex$,"buildrtm.exe", DEST=B, RENAME, TIMESTAMP, size=23516
+6:calc.bi$,"calc.bi", DEST=I, RENAME, TIMESTAMP, size=312
+6:calc.fr$,"calc.frm", DEST=I, RENAME, TIMESTAMP, size=7077
+6:calc.ma$,"calc.mak", DEST=I, RENAME, TIMESTAMP, size=10
+2:chart.ba$,"chart.bas", DEST=I, RENAME, TIMESTAMP, size=143360
+2:chart.bi$,"chart.bi", DEST=I, RENAME, TIMESTAMP, size=8061
+2:chart.ql$,"chart.qlb", DEST=L, RENAME, TIMESTAMP, size=73761
+2:chartasm.as$,"chartasm.asm", DEST=I, RENAME, TIMESTAMP, size=20981
+2:chartasm.ob$,"chartasm.obj", DEST=L, RENAME, TIMESTAMP, size=3431
+2:check.fr$,"check.frm", DEST=I, RENAME, TIMESTAMP, size=23548
+2:check.ma$,"check.mak", DEST=I, RENAME, TIMESTAMP, size=11
+3:CHRTATTR.FR$,"CHRTATTR.FRM", DEST=I, RENAME, TIMESTAMP, size=2830
+3:chrtdata.fr$,"chrtdata.frm", DEST=I, RENAME, TIMESTAMP, size=22337
+3:chrtdemo.bi$,"chrtdemo.bi", DEST=I, RENAME, TIMESTAMP, size=1508
+3:chrtdemo.fr$,"chrtdemo.frm", DEST=I, RENAME, TIMESTAMP, size=7265
+3:chrtdemo.ma$,"chrtdemo.mak", DEST=I, RENAME, TIMESTAMP, size=109
+3:CHRTFONT.FR$,"CHRTFONT.FRM", DEST=I, RENAME, TIMESTAMP, size=1607
+3:chrtsubs.ba$,"chrtsubs.bas", DEST=I, RENAME, TIMESTAMP, size=29307
+3:chrttype.fr$,"chrttype.frm", DEST=I, RENAME, TIMESTAMP, size=1641
+6:clock.bi$,"clock.bi", DEST=I, RENAME, TIMESTAMP, size=91
+6:clock.fr$,"clock.frm", DEST=I, RENAME, TIMESTAMP, size=5388
+6:clock.ma$,"clock.mak", DEST=I, RENAME, TIMESTAMP, size=11
+4:cmndlg.ba$,"cmndlg.bas", DEST=I, RENAME, TIMESTAMP, size=44355
+4:cmndlg.bi$,"cmndlg.bi", DEST=I, RENAME, TIMESTAMP, size=1249
+4:cmndlg.ma$,"cmndlg.mak", DEST=I, RENAME, TIMESTAMP, size=25
+4:cmndlg.ql$,"cmndlg.qlb", DEST=L, RENAME, TIMESTAMP, size=33380
+4:cmndlgf.fr$,"cmndlgf.frm", DEST=I, RENAME, TIMESTAMP, size=19942
+1:compat.tx$,"compat.txt", DEST=B, RENAME, TIMESTAMP, size=6444
+2:constant.bi$,"constant.bi", DEST=I, RENAME, TIMESTAMP, size=9990
+2:contdraw.ba$,"contdraw.bas", DEST=I, RENAME, TIMESTAMP, size=10130
+2:controlp.fr$,"controlp.frm", DEST=I, RENAME, TIMESTAMP, size=15312
+2:controlp.ma$,"controlp.mak", DEST=I, RENAME, TIMESTAMP, size=28
+3:courb.fo$,"courb.fon", DEST=I, RENAME, TIMESTAMP, size=19088
+3:coure.fo$,"coure.fon", DEST=I, RENAME, TIMESTAMP, size=23808
+4:custcall.as$,"custcall.asm", DEST=I, RENAME, TIMESTAMP, size=7427
+4:custcall.ba$,"custcall.bas", DEST=I, RENAME, TIMESTAMP, size=6644
+4:custcall.c$,"custcall.c", DEST=I, RENAME, TIMESTAMP, size=7102
+4:custevnt.as$,"custevnt.asm", DEST=I, RENAME, TIMESTAMP, size=4288
+4:custevnt.ba$,"custevnt.bas", DEST=I, RENAME, TIMESTAMP, size=11030
+4:custevnt.c$,"custevnt.c", DEST=I, RENAME, TIMESTAMP, size=10923
+2:custgen.ex$,"custgen.exe", DEST=B, RENAME, TIMESTAMP, size=259084
+4:custincl.bi$,"custincl.bi", DEST=I, RENAME, TIMESTAMP, size=4916
+4:custincl.h$,"custincl.h", DEST=I, RENAME, TIMESTAMP, size=4951
+4:custincl.in$,"custincl.inc", DEST=I, RENAME, TIMESTAMP, size=5109
+4:custreg.as$,"custreg.asm", DEST=I, RENAME, TIMESTAMP, size=10419
+2:cv.ex$,"cv.exe", DEST=B, RENAME, TIMESTAMP, size=468512
+7:cv.hl$,"cv.hlp", DEST=H, RENAME, TIMESTAMP, size=168185
+2:cv.ic$,"cv.ico", DEST=B, RENAME, TIMESTAMP, size=1086
+2:cvpack.ex$,"cvpack.exe", DEST=B, RENAME, TIMESTAMP, size=127568
+2:debug.fr$,"debug.frm", DEST=I, RENAME, TIMESTAMP, size=1974
+1:decomp.exe,"decomp.exe", DEST=B, TIMESTAMP, size=16558
+4:eed1can.dl$,"eed1can.dll", DEST=B, RENAME, TIMESTAMP, size=91062
+2:eed1cxx.dl$,"eed1cxx.dll", DEST=B, RENAME, TIMESTAMP, size=105722
+2:emd1d1.dl$,"emd1d1.dll", DEST=B, RENAME, TIMESTAMP, size=69322
+3:fcount.bt$,"fcount.bat", DEST=B, RENAME, TIMESTAMP, size=398
+3:fcover.bt$,"fcover.bat", DEST=B, RENAME, TIMESTAMP, size=399
+1:fd.ex$,"fd.exe", DEST=B, RENAME, TIMESTAMP, size=320900
+2:finance.bi$,"finance.bi", DEST=I, RENAME, TIMESTAMP, size=1489
+4:finance.ql$,"finance.qlb", DEST=L, RENAME, TIMESTAMP, size=12779
+1:fixshift.co$,"fixshift.com", DEST=B, RENAME, TIMESTAMP, size=688
+2:font.ba$,"font.bas", DEST=I, RENAME, TIMESTAMP, size=53354
+2:font.bi$,"font.bi", DEST=I, RENAME, TIMESTAMP, size=3439
+2:font.ql$,"font.qlb", DEST=L, RENAME, TIMESTAMP, size=26094
+2:fontasm.as$,"fontasm.asm", DEST=I, RENAME, TIMESTAMP, size=15074
+2:fontasm.ob$,"fontasm.obj", DEST=L, RENAME, TIMESTAMP, size=945
+2:fontdemo.fr$,"fontdemo.frm", DEST=I, RENAME, TIMESTAMP, size=9094
+2:fontdemo.ma$,"fontdemo.mak", DEST=I, RENAME, TIMESTAMP, size=28
+2:fontdraw.ba$,"fontdraw.bas", DEST=I, RENAME, TIMESTAMP, size=4302
+3:fsample.bt$,"fsample.bat", DEST=B, RENAME, TIMESTAMP, size=413
+4:ft.ex$,"ft.exe", DEST=B, RENAME, TIMESTAMP, size=33820
+3:ftime.bt$,"ftime.bat", DEST=B, RENAME, TIMESTAMP, size=395
+2:GRAPDRAW.BA$,"GRAPDRAW.BAS", DEST=I, RENAME, TIMESTAMP, size=8849
+2:GRAPHICS.FR$,"GRAPHICS.FRM", DEST=I, RENAME, TIMESTAMP, size=5325
+2:GRAPHICS.MA$,"GRAPHICS.MAK", DEST=I, RENAME, TIMESTAMP, size=28
+2:help.ba$,"help.bas", DEST=I, RENAME, TIMESTAMP, size=27586
+2:help.bi$,"help.bi", DEST=I, RENAME, TIMESTAMP, size=758
+2:help.ma$,"help.mak", DEST=I, RENAME, TIMESTAMP, size=35
+2:help.ql$,"help.qlb", DEST=L, RENAME, TIMESTAMP, size=25467
+2:helpdemo.tx$,"helpdemo.txt", DEST=I, RENAME, TIMESTAMP, size=15963
+2:helpf.fr$,"helpf.frm", DEST=I, RENAME, TIMESTAMP, size=15535
+2:helputil.fr$,"helputil.frm", DEST=I, RENAME, TIMESTAMP, size=5054
+2:helvb.fo$,"helvb.fon", DEST=I, RENAME, TIMESTAMP, size=50880
+2:helve.fo$,"helve.fon", DEST=I, RENAME, TIMESTAMP, size=64784
+2:jabber.tx$,"jabber.txt", DEST=I, RENAME, TIMESTAMP, size=1025
+3:lcount.bt$,"lcount.bat", DEST=B, RENAME, TIMESTAMP, size=394
+3:lcover.bt$,"lcover.bat", DEST=B, RENAME, TIMESTAMP, size=395
+1:learn.ct$,"learn.ctx", DEST=B, RENAME, TIMESTAMP, size=36615
+1:learn.ex$,"learn.exe", DEST=B, RENAME, TIMESTAMP, size=76864
+1:learn.sc$,"learn.scn", DEST=B, RENAME, TIMESTAMP, size=26324
+1:learn.so$,"learn.sob", DEST=B, RENAME, TIMESTAMP, size=22005
+2:lib.ex$,"lib.exe", DEST=B, RENAME, TIMESTAMP, size=59171
+1:link.ex$,"link.exe", DEST=B, RENAME, TIMESTAMP, size=202912
+3:lsample.bt$,"lsample.bat", DEST=B, RENAME, TIMESTAMP, size=409
+3:ltime.bt$,"ltime.bat", DEST=B, RENAME, TIMESTAMP, size=391
+2:math.ba$,"math.bas", DEST=I, RENAME, TIMESTAMP, size=47836
+2:math.bi$,"math.bi", DEST=I, RENAME, TIMESTAMP, size=3091
+2:math.ql$,"math.qlb", DEST=L, RENAME, TIMESTAMP, size=29290
+2:matha.ba$,"matha.bas", DEST=I, RENAME, TIMESTAMP, size=22915
+2:matha.bi$,"matha.bi", DEST=I, RENAME, TIMESTAMP, size=1528
+2:mouse.ba$,"mouse.bas", DEST=I, RENAME, TIMESTAMP, size=9674
+2:mouse.bi$,"mouse.bi", DEST=I, RENAME, TIMESTAMP, size=399
+2:MOUSE.CO$,"MOUSE.COM", DEST=B, RENAME, TIMESTAMP, size=56425
+2:mouse.ma$,"mouse.mak", DEST=I, RENAME, TIMESTAMP, size=11
+1:msherc.co$,"msherc.com", DEST=B, RENAME, TIMESTAMP, size=6947
+3:nocga.ob$,"nocga.obj", DEST=L, RENAME, TIMESTAMP, size=137
+3:nocom.ob$,"nocom.obj", DEST=L, RENAME, TIMESTAMP, size=502
+3:noedit.ob$,"noedit.obj", DEST=L, RENAME, TIMESTAMP, size=551
+3:noega.ob$,"noega.obj", DEST=L, RENAME, TIMESTAMP, size=164
+3:NOEVENT.OB$,"NOEVENT.OBJ", DEST=L, RENAME, TIMESTAMP, size=533
+3:nofltin.ob$,"nofltin.obj", DEST=L, RENAME, TIMESTAMP, size=457
+3:NOFORMS.OB$,"NOFORMS.OBJ", DEST=L, RENAME, TIMESTAMP, size=1182
+3:NOGRAPH.OB$,"NOGRAPH.OBJ", DEST=L, RENAME, TIMESTAMP, size=700
+3:noherc.ob$,"noherc.obj", DEST=L, RENAME, TIMESTAMP, size=125
+3:NOISAM.OB$,"NOISAM.OBJ", DEST=L, RENAME, TIMESTAMP, size=331
+3:nolpt.ob$,"nolpt.obj", DEST=L, RENAME, TIMESTAMP, size=216
+2:nooga.ob$,"nooga.obj", DEST=L, RENAME, TIMESTAMP, size=124
+2:notehelp.tx$,"notehelp.txt", DEST=I, RENAME, TIMESTAMP, size=6141
+2:notepad.bi$,"notepad.bi", DEST=I, RENAME, TIMESTAMP, size=361
+2:notepad.fr$,"notepad.frm", DEST=I, RENAME, TIMESTAMP, size=23479
+2:notepad.ma$,"notepad.mak", DEST=I, RENAME, TIMESTAMP, size=48
+2:novga.ob$,"novga.obj", DEST=L, RENAME, TIMESTAMP, size=168
+1:packing.txt,"packing.txt", DEST=B, TIMESTAMP, size=952850
+1:patch87.ex$,"patch87.exe", DEST=B, RENAME, TIMESTAMP, size=4206
+2:pgbar.ba$,"pgbar.bas", DEST=I, RENAME, TIMESTAMP, size=4161
+2:pglinems.ba$,"pglinems.bas", DEST=I, RENAME, TIMESTAMP, size=4438
+2:pgpie.ba$,"pgpie.bas", DEST=I, RENAME, TIMESTAMP, size=4709
+2:pgscat.ba$,"pgscat.bas", DEST=I, RENAME, TIMESTAMP, size=4230
+4:plist.ex$,"plist.exe", DEST=B, RENAME, TIMESTAMP, size=85520
+4:prep.ex$,"prep.exe", DEST=B, RENAME, TIMESTAMP, size=92004
+2:profile.ex$,"profile.exe", DEST=B, RENAME, TIMESTAMP, size=62204
+2:profiler.xl$,"profiler.xlm", DEST=I, RENAME, TIMESTAMP, size=10604
+2:qlbview.bi$,"qlbview.bi", DEST=I, RENAME, TIMESTAMP, size=153
+2:qlbview.fr$,"qlbview.frm", DEST=I, RENAME, TIMESTAMP, size=8307
+2:qlbview.ma$,"qlbview.mak", DEST=I, RENAME, TIMESTAMP, size=13
+2:qsort.ba$,"qsort.bas", DEST=I, RENAME, TIMESTAMP, size=7106
+2:qsort.pc$,"qsort.pcf", DEST=I, RENAME, TIMESTAMP, size=499
+1:readme.tx$,"readme.txt", DEST=B, RENAME, TIMESTAMP, size=48174
+3:SEEK.FR$,"SEEK.FRM", DEST=I, RENAME, TIMESTAMP, size=6528
+3:SEEK.MA$,"SEEK.MAK", DEST=I, RENAME, TIMESTAMP, size=10
+2:setup.ba$,"setup.bas", DEST=I, RENAME, TIMESTAMP, size=33985
+2:setup.ma$,"setup.mak", DEST=I, RENAME, TIMESTAMP, size=67
+2:setupmsg.fr$,"setupmsg.frm", DEST=I, RENAME, TIMESTAMP, size=1761
+2:setupopt.fr$,"setupopt.frm", DEST=I, RENAME, TIMESTAMP, size=2044
+2:setuppth.fr$,"setuppth.frm", DEST=I, RENAME, TIMESTAMP, size=2360
+2:setupsts.fr$,"setupsts.frm", DEST=I, RENAME, TIMESTAMP, size=1398
+2:shd1.dl$,"shd1.dll", DEST=B, RENAME, TIMESTAMP, size=42804
+4:smallerr.ob$,"smallerr.obj", DEST=L, RENAME, TIMESTAMP, size=329
+3:sortdemo.ba$,"sortdemo.bas", DEST=I, RENAME, TIMESTAMP, size=26898
+3:sortdemo.ma$,"sortdemo.mak", DEST=I, RENAME, TIMESTAMP, size=14
+2:spin.ba$,"spin.bas", DEST=I, RENAME, TIMESTAMP, size=25151
+2:spin.li$,"spin.lib", DEST=L, RENAME, TIMESTAMP, size=17433
+2:spin.ql$,"spin.qlb", DEST=L, RENAME, TIMESTAMP, size=16887
+2:SPINDEMO.FR$,"SPINDEMO.FRM", DEST=I, RENAME, TIMESTAMP, size=5075
+2:SPINDEMO.MA$,"SPINDEMO.MAK", DEST=I, RENAME, TIMESTAMP, size=14
+2:spinreg.as$,"spinreg.asm", DEST=I, RENAME, TIMESTAMP, size=11292
+2:tld1loc.dl$,"tld1loc.dll", DEST=B, RENAME, TIMESTAMP, size=16692
+2:tmsrb.fo$,"tmsrb.fon", DEST=I, RENAME, TIMESTAMP, size=45936
+2:tmsre.fo$,"tmsre.fon", DEST=I, RENAME, TIMESTAMP, size=58304
+2:tordraw.ba$,"tordraw.bas", DEST=I, RENAME, TIMESTAMP, size=30961
+2:torus.fr$,"torus.frm", DEST=I, RENAME, TIMESTAMP, size=7284
+2:torus.ma$,"torus.mak", DEST=I, RENAME, TIMESTAMP, size=24
+3:trace.ex$,"trace.exe", DEST=B, RENAME, TIMESTAMP, size=25590
+3:trnslate.ex$,"trnslate.exe", DEST=B, RENAME, TIMESTAMP, size=77640
+4:tscnio.ob$,"tscnio.obj", DEST=L, RENAME, TIMESTAMP, size=3197
+3:vbdc10.li$,"vbdc10.lib", DEST=L, RENAME, TIMESTAMP, size=9243
+6:vbdl10.li$,"vbdl10.lib", DEST=L, RENAME, TIMESTAMP, size=46299
+5:VBDOS.bi$,"VBDOS.bi", DEST=I, RENAME, TIMESTAMP, size=1851
+3:VBDOS.HL$,"VBDOS.HLP", DEST=H, RENAME, TIMESTAMP, size=985236
+1:VBDOS.IC$,"VBDOS.ICO", DEST=B, RENAME, TIMESTAMP, size=1086
+1:VBDOS.LI$,"VBDOS.LIB", DEST=L, RENAME, TIMESTAMP, size=2587
+1:VBDOS.PI$,"VBDOS.PIF", DEST=B, RENAME, TIMESTAMP, size=545
+1:VBDOS.QL$,"VBDOS.QLB", DEST=L, RENAME, TIMESTAMP, size=7661
+2:VBDOSQLB.LI$,"VBDOSQLB.LIB", DEST=L, RENAME, TIMESTAMP, size=33280
+7:vbdprof.ex$,"vbdprof.exe", DEST=B, RENAME, TIMESTAMP, size=216124
+1:VBDPSS.HL$,"VBDPSS.HLP", DEST=H, RENAME, TIMESTAMP, size=222748
+2:VBDTRACE.LI$,"VBDTRACE.LIB", DEST=L, RENAME, TIMESTAMP, size=8739
+1:VBDOS.EX$,"VBDOS.EXE", DEST=B, RENAME, TIMESTAMP, size=555520
+3:vbda10.li$,"vbda10.lib", DEST=L, RENAME, TIMESTAMP, size=638033
+7:vbde10.li$,"vbde10.lib", DEST=L, RENAME, TIMESTAMP, size=634137
+
+[list copy_isam1e 1]
+5:VBDRT10e.ex$,"VBDRT10e.exe", DEST=B, RENAME, TIMESTAMP, size=323603
+3:VBDRT10e.li$,"VBDRT10e.lib", DEST=L, RENAME, TIMESTAMP, size=46821
+4:VBDCL10e.li$,"VBDCL10e.lib", DEST=L, RENAME, TIMESTAMP, size=646185
+2:chart.li$,"chart.lib", DEST=L, RENAME, TIMESTAMP, size=113727
+4:cmndlg.li$,"cmndlg.lib", DEST=L, RENAME, TIMESTAMP, size=49687
+4:finance.li$,"finance.lib", DEST=L, RENAME, TIMESTAMP, size=10240
+2:font.li$,"font.lib", DEST=L, RENAME, TIMESTAMP, size=34349
+2:help.li$,"help.lib", DEST=L, RENAME, TIMESTAMP, size=35365
+2:math.li$,"math.lib", DEST=L, RENAME, TIMESTAMP, size=31761
+2:notrnem.li$,"notrnem.lib", DEST=L, RENAME, TIMESTAMP, size=14879
+1:isamcvt.ex$,"isamcvt.exe", DEST=B, RENAME, TIMESTAMP, size=114978
+7:isamio.ex$,"isamio.exe", DEST=B, RENAME, TIMESTAMP, size=121206
+6:isampack.ex$,"isampack.exe", DEST=B, RENAME, TIMESTAMP, size=94522
+5:isamrepr.ex$,"isamrepr.exe", DEST=B, RENAME, TIMESTAMP, size=87583
+5:proisam.ex$,"proisam.exe", DEST=B, RENAME, TIMESTAMP, size=62409
+6:proisamd.ex$,"proisamd.exe", DEST=B, RENAME, TIMESTAMP, size=77209
+5:proisamd.li$,"proisamd.lib", DEST=L, RENAME, TIMESTAMP, size=153423
+
+[list copy_isam1a 1]
+5:VBDRT10a.ex$,"VBDRT10a.exe", DEST=B, RENAME, TIMESTAMP, size=319939
+5:VBDRT10a.li$,"VBDRT10a.lib", DEST=L, RENAME, TIMESTAMP, size=46821
+4:VBDCL10a.li$,"VBDCL10a.lib", DEST=L, RENAME, TIMESTAMP, size=654689
+4:cmndlga.li$,"cmndlga.lib", DEST=L, RENAME, TIMESTAMP, size=49687
+4:financea.li$,"financea.lib", DEST=L, RENAME, TIMESTAMP, size=11287
+2:fonta.li$,"fonta.lib", DEST=L, RENAME, TIMESTAMP, size=35373
+2:helpa.li$,"helpa.lib", DEST=L, RENAME, TIMESTAMP, size=35365
+2:matha.li$,"matha.lib", DEST=L, RENAME, TIMESTAMP, size=26641
+1:isamcvt.ex$,"isamcvt.exe", DEST=B, RENAME, TIMESTAMP, size=114978
+7:isamio.ex$,"isamio.exe", DEST=B, RENAME, TIMESTAMP, size=121206
+6:isampack.ex$,"isampack.exe", DEST=B, RENAME, TIMESTAMP, size=94522
+5:isamrepr.ex$,"isamrepr.exe", DEST=B, RENAME, TIMESTAMP, size=87583
+5:proisam.ex$,"proisam.exe", DEST=B, RENAME, TIMESTAMP, size=62409
+6:proisamd.ex$,"proisamd.exe", DEST=B, RENAME, TIMESTAMP, size=77209
+5:proisamd.li$,"proisamd.lib", DEST=L, RENAME, TIMESTAMP, size=153423
+
+[list copy_isam2e 1]
+5:VBDRT10e.2i$,"VBDRT10e.lib", DEST=L, RENAME, TIMESTAMP, size=46821
+5:VBDRT10e.2x$,"VBDRT10e.exe", DEST=B, RENAME, TIMESTAMP, size=323603
+4:VBDCL10e.li$,"VBDCL10e.lib", DEST=L, RENAME, TIMESTAMP, size=646185
+2:chart.li$,"chart.lib", DEST=L, RENAME, TIMESTAMP, size=113727
+4:cmndlg.li$,"cmndlg.lib", DEST=L, RENAME, TIMESTAMP, size=49687
+4:finance.li$,"finance.lib", DEST=L, RENAME, TIMESTAMP, size=10240
+2:font.li$,"font.lib", DEST=L, RENAME, TIMESTAMP, size=34349
+2:help.li$,"help.lib", DEST=L, RENAME, TIMESTAMP, size=35365
+2:math.li$,"math.lib", DEST=L, RENAME, TIMESTAMP, size=31761
+2:notrnem.li$,"notrnem.lib", DEST=L, RENAME, TIMESTAMP, size=14879
+7:isamcvt.2x$,"isamcvt.exe", DEST=B, RENAME, TIMESTAMP, size=114994
+7:isamio.2x$,"isamio.exe", DEST=B, RENAME, TIMESTAMP, size=121206
+7:isampack.2x$,"isampack.exe", DEST=B, RENAME, TIMESTAMP, size=94522
+6:isamrepr.2x$,"isamrepr.exe", DEST=B, RENAME, TIMESTAMP, size=87583
+5:proisam.2x$,"proisam.exe", DEST=B, RENAME, TIMESTAMP, size=77209
+5:proisamd.2i$,"proisamd.lib", DEST=L, RENAME, TIMESTAMP, size=153423
+5:proisamd.2x$,"proisamd.exe", DEST=B, RENAME, TIMESTAMP, size=77209
+
+[list copy_isam2a 1]
+7:VBDRT10a.2i$,"VBDRT10a.lib", DEST=L, RENAME, TIMESTAMP, size=46821
+4:VBDRT10a.2x$,"VBDRT10a.exe", DEST=B, RENAME, TIMESTAMP, size=319939
+4:VBDCL10a.li$,"VBDCL10a.lib", DEST=L, RENAME, TIMESTAMP, size=654689
+4:cmndlga.li$,"cmndlga.lib", DEST=L, RENAME, TIMESTAMP, size=49687
+4:financea.li$,"financea.lib", DEST=L, RENAME, TIMESTAMP, size=11287
+2:fonta.li$,"fonta.lib", DEST=L, RENAME, TIMESTAMP, size=35373
+2:helpa.li$,"helpa.lib", DEST=L, RENAME, TIMESTAMP, size=35365
+2:matha.li$,"matha.lib", DEST=L, RENAME, TIMESTAMP, size=26641
+7:isamcvt.2x$,"isamcvt.exe", DEST=B, RENAME, TIMESTAMP, size=114994
+7:isamio.2x$,"isamio.exe", DEST=B, RENAME, TIMESTAMP, size=121206
+7:isampack.2x$,"isampack.exe", DEST=B, RENAME, TIMESTAMP, size=94522
+6:isamrepr.2x$,"isamrepr.exe", DEST=B, RENAME, TIMESTAMP, size=87583
+5:proisam.2x$,"proisam.exe", DEST=B, RENAME, TIMESTAMP, size=77209
+5:proisamd.2i$,"proisamd.lib", DEST=L, RENAME, TIMESTAMP, size=153423
+5:proisamd.2x$,"proisamd.exe", DEST=B, RENAME, TIMESTAMP, size=77209
+
+[list copy_isam3e 1]
+5:VBDRT10e.3i$,"VBDRT10e.lib", DEST=L, RENAME, TIMESTAMP, size=46821
+6:VBDRT10e.3x$,"VBDRT10e.exe", DEST=B, RENAME, TIMESTAMP, size=323603
+4:VBDCL10e.li$,"VBDCL10e.lib", DEST=L, RENAME, TIMESTAMP, size=646185
+2:chart.li$,"chart.lib", DEST=L, RENAME, TIMESTAMP, size=113727
+4:cmndlg.li$,"cmndlg.lib", DEST=L, RENAME, TIMESTAMP, size=49687
+4:finance.li$,"finance.lib", DEST=L, RENAME, TIMESTAMP, size=10240
+2:font.li$,"font.lib", DEST=L, RENAME, TIMESTAMP, size=34349
+2:help.li$,"help.lib", DEST=L, RENAME, TIMESTAMP, size=35365
+2:math.li$,"math.lib", DEST=L, RENAME, TIMESTAMP, size=31761
+2:notrnem.li$,"notrnem.lib", DEST=L, RENAME, TIMESTAMP, size=14879
+7:isamcvt.3x$,"isamcvt.exe", DEST=B, RENAME, TIMESTAMP, size=114994
+7:isamio.3x$,"isamio.exe", DEST=B, RENAME, TIMESTAMP, size=121206
+7:isampack.3x$,"isampack.exe", DEST=B, RENAME, TIMESTAMP, size=94522
+6:isamrepr.3x$,"isamrepr.exe", DEST=B, RENAME, TIMESTAMP, size=87583
+6:proisam.3x$,"proisam.exe", DEST=B, RENAME, TIMESTAMP, size=77209
+6:proisamd.3i$,"proisamd.lib", DEST=L, RENAME, TIMESTAMP, size=153423
+6:proisamd.3x$,"proisamd.exe", DEST=B, RENAME, TIMESTAMP, size=77209
+
+[list copy_isam3a 1]
+5:VBDRT10a.3i$,"VBDRT10a.lib", DEST=L, RENAME, TIMESTAMP, size=46821
+5:VBDRT10a.3x$,"VBDRT10a.exe", DEST=B, RENAME, TIMESTAMP, size=319939
+4:VBDCL10a.li$,"VBDCL10a.lib", DEST=L, RENAME, TIMESTAMP, size=654689
+4:cmndlga.li$,"cmndlga.lib", DEST=L, RENAME, TIMESTAMP, size=49687
+4:financea.li$,"financea.lib", DEST=L, RENAME, TIMESTAMP, size=11287
+2:fonta.li$,"fonta.lib", DEST=L, RENAME, TIMESTAMP, size=35373
+2:helpa.li$,"helpa.lib", DEST=L, RENAME, TIMESTAMP, size=35365
+2:matha.li$,"matha.lib", DEST=L, RENAME, TIMESTAMP, size=26641
+7:isamcvt.3x$,"isamcvt.exe", DEST=B, RENAME, TIMESTAMP, size=114994
+7:isamio.3x$,"isamio.exe", DEST=B, RENAME, TIMESTAMP, size=121206
+7:isampack.3x$,"isampack.exe", DEST=B, RENAME, TIMESTAMP, size=94522
+6:isamrepr.3x$,"isamrepr.exe", DEST=B, RENAME, TIMESTAMP, size=87583
+6:proisam.3x$,"proisam.exe", DEST=B, RENAME, TIMESTAMP, size=77209
+6:proisamd.3i$,"proisamd.lib", DEST=L, RENAME, TIMESTAMP, size=153423
+6:proisamd.3x$,"proisamd.exe", DEST=B, RENAME, TIMESTAMP, size=77209
+
+[list copy_isam4e 1]
+6:VBDRT10e.4i$,"VBDRT10e.lib", DEST=L, RENAME, TIMESTAMP, size=46821
+6:VBDRT10e.4x$,"VBDRT10e.exe", DEST=B, RENAME, TIMESTAMP, size=323619
+4:VBDCL10e.li$,"VBDCL10e.lib", DEST=L, RENAME, TIMESTAMP, size=646185
+2:chart.li$,"chart.lib", DEST=L, RENAME, TIMESTAMP, size=113727
+4:cmndlg.li$,"cmndlg.lib", DEST=L, RENAME, TIMESTAMP, size=49687
+4:finance.li$,"finance.lib", DEST=L, RENAME, TIMESTAMP, size=10240
+2:font.li$,"font.lib", DEST=L, RENAME, TIMESTAMP, size=34349
+2:help.li$,"help.lib", DEST=L, RENAME, TIMESTAMP, size=35365
+2:math.li$,"math.lib", DEST=L, RENAME, TIMESTAMP, size=31761
+2:notrnem.li$,"notrnem.lib", DEST=L, RENAME, TIMESTAMP, size=14879
+7:isamcvt.4x$,"isamcvt.exe", DEST=B, RENAME, TIMESTAMP, size=115010
+7:isamio.4x$,"isamio.exe", DEST=B, RENAME, TIMESTAMP, size=121222
+4:isampack.4x$,"isampack.exe", DEST=B, RENAME, TIMESTAMP, size=94538
+6:isamrepr.4x$,"isamrepr.exe", DEST=B, RENAME, TIMESTAMP, size=87583
+6:proisam.4x$,"proisam.exe", DEST=B, RENAME, TIMESTAMP, size=77225
+6:proisamd.4i$,"proisamd.lib", DEST=L, RENAME, TIMESTAMP, size=153423
+6:proisamd.4x$,"proisamd.exe", DEST=B, RENAME, TIMESTAMP, size=77225
+
+[list copy_isam4a 1]
+5:VBDRT10a.4i$,"VBDRT10a.lib", DEST=L, RENAME, TIMESTAMP, size=46821
+6:VBDRT10a.4x$,"VBDRT10a.exe", DEST=B, RENAME, TIMESTAMP, size=319955
+4:VBDCL10a.li$,"VBDCL10a.lib", DEST=L, RENAME, TIMESTAMP, size=654689
+4:cmndlga.li$,"cmndlga.lib", DEST=L, RENAME, TIMESTAMP, size=49687
+4:financea.li$,"financea.lib", DEST=L, RENAME, TIMESTAMP, size=11287
+2:fonta.li$,"fonta.lib", DEST=L, RENAME, TIMESTAMP, size=35373
+2:helpa.li$,"helpa.lib", DEST=L, RENAME, TIMESTAMP, size=35365
+2:matha.li$,"matha.lib", DEST=L, RENAME, TIMESTAMP, size=26641
+7:isamcvt.4x$,"isamcvt.exe", DEST=B, RENAME, TIMESTAMP, size=115010
+7:isamio.4x$,"isamio.exe", DEST=B, RENAME, TIMESTAMP, size=121222
+4:isampack.4x$,"isampack.exe", DEST=B, RENAME, TIMESTAMP, size=94538
+6:isamrepr.4x$,"isamrepr.exe", DEST=B, RENAME, TIMESTAMP, size=87583
+6:proisam.4x$,"proisam.exe", DEST=B, RENAME, TIMESTAMP, size=77225
+6:proisamd.4i$,"proisamd.lib", DEST=L, RENAME, TIMESTAMP, size=153423
+6:proisamd.4x$,"proisamd.exe", DEST=B, RENAME, TIMESTAMP, size=77225
+
+[list remove]
+; required
+
+; more macros
+[macro]
+; required
+LISTMORE  = "MORE"
+HARDHDR   = "Hard Drive "
+FLOPPYHDR = "Floppy Drive "
+
+; menus
+
+[menu mainc]
+"Install Visual Basic for MS-DOS"
+"Build additional libraries"
+"Exit"
+
+[menu finishedm]
+"Exit"
+"Exit and run Visual Basic tutorial"
+
+; required menus below this point
+[menu timestampm]
+"Continue without overwriting the file"
+"Replace my copy of the file"
+"Exit Setup"
+
+[menu retry]
+"Try again"
+"Exit Setup"
+
+[menu retryorignore]
+"Try again"
+"Ignore the error"
+"Exit Setup"
+
+[menu contorexit]
+"Continue"
+"Exit Setup"
+
+[menu readonlyerrm]
+"Try to overwrite"
+"Continue without copying"
+"Exit Setup"
+
+[color]
+1=high white
+2=blue,white
+3=white,blue
+4=white,black
+
+; header and footer screens
+[screen header]
+{color white,blue}
+{at 2,0}
+Visual Basic for MS-DOS Setup
+{at 2,1}
+{line 29,178}
+;
+; footer screens
+;
+[screen exit]
+{clear 0,24,79,24}
+{color black, white}
+{at 65,24}
+Ctrl+C = Exit
+;
+;
+[screen ent_exit]
+{clear 0,24,79,24}
+{color black, white}
+{at 2,24}
+Enter = Continue
+{at 65,24}
+Ctrl+C = Exit
+;
+;
+[screen ent_sel_exit]
+{clear 0,24,79,24}
+{color black, white}
+{at 2,24}
+Enter = Continue
+{at 0,24}
+{center on}
+ = Change Selection
+{center off}
+{at 65,24}
+Ctrl+C = Exit
+;
+;
+[screen installing]
+{at 31,1}
+Installing Visual Basic for MS-DOS
+{at 31,2}
+{line 34,177}
+;
+;
+[menu smallhd]
+"Select new destination drive"
+"Continue"
+"Exit"
+;
+;
+; required screens
+;
+[menu formatorretry]
+;
+;
+[screen mcopying]
+;{include screen header}
+;{include screen installing}
+{color white,blue}
+{at 2,0}
+Visual Basic for MS-DOS Setup
+{at 2,1}
+{line 29,178}
+{at 31,1}
+Installing Visual Basic for MS-DOS
+{at 31,2}
+{line 34,177}
+{clear 0,6,80,22}
+{At 0,9}
+{center on}
+Unpacking:
+
+%SFILE
+to
+%DPATH%DFILE
+
+
+There are %NUM files left to copy.
+{center off}
+{include screen exit}
+;
+;
+[screen badmacro]
+Macro "%SECTION" is missing
+;
+;
+[screen insdiskpath]
+{include screen header}
+{include screen installing}
+{At 5,6}
+Setup can't find the file %SFILE from "%DISKNAME".
+
+Please specify the floppy drive where this file can be found
+and press Enter.
+
+{input 10,60,1}
+{include screen ent_exit}
+;
+;
+[screen insdiskpath2]
+{include screen insdiskpath}
+;
+;
+[screen insdisknopath]
+{include screen header}
+{include screen installing}
+{At 20,8}
+Insert the disk labeled "%DISKNAME" 
+into drive %DRIVE and press Enter to continue.
+
+{input 30, 21, 5}
+{include menu contorexit}
+{include screen ent_sel_exit}
+;
+;
+[screen badsdisk]
+{include screen header}
+{include screen installing}
+{At 22,7}
+Setup can't read the disk in drive %DRIVE.
+Please be sure the correct disk is properly
+inserted and the drive door is closed.
+
+{input 30, 21, 5}
+{include menu contorexit}
+{include screen ent_sel_exit}
+;
+;
+[screen wrongdisk]
+{include screen insdisknopath}
+{At 20,7}
+This does not appear to be "%DISKNAME".
+;
+;
+[screen badddisk]
+{include screen header}
+{include screen installing}
+{At 0,8}
+{center on}
+Setup can't read the disk in drive %DRIVE.
+{center off}
+
+{input 25,30,4}
+{include menu formatorretry}
+{include screen ent_sel_exit}
+;
+;
+[screen readerr]
+{include screen header}
+{include screen installing}
+{At 0,8}
+{center on}
+An error occurred while reading the file %SFILE.
+{center off}
+
+{input 23,35,5}
+; inserts menu retry or menu retryorignore
+{include screen ent_sel_exit}
+;
+;
+[screen writeerr]
+{include screen header}
+{include screen installing}
+{At 0,8}
+{center on}
+An error occurred while writing the file
+%DPATH%DFILE.
+{center off}
+
+{input 23,35,5}
+; inserts menu retry or menu retryorignore
+{include screen ent_sel_exit}
+;
+;
+[screen createerr]
+{include screen header}
+{include screen installing}
+{At 0,8}
+{center on}
+An error occurred while creating the file
+%DPATH%DFILE.
+{center off}
+
+{input 23,35,5}
+; inserts menu retry or menu retryorignore
+{include screen ent_sel_exit}
+;
+;
+[screen createdirerr]
+{include screen header}
+{include screen installing}
+{At 0,8}
+{center on}
+An error occurred while creating the directory
+%DPATH.
+{center off}
+
+{input 23,35,5}
+; inserts menu retry or menu retryorignore
+{include screen ent_sel_exit}
+;
+;
+[screen timestamperr]
+{include screen header}
+{include screen installing}
+{At 5,6}
+The version of the file %DFILE on your disk is newer than
+the one supplied with Microsoft Visual Basic for MS-DOS 1.00.
+
+You can continue the installation process without copying this
+file, or you can overwrite the copy on your disk.
+
+Setup suggests that you not overwrite this file. If you decide
+later that you want the version supplied with Visual Basic,
+rename the existing file and use DECOMP.EXE to decompress
+and copy the new version.
+
+{input 18,45,5}
+{include menu timestampm}
+{include screen ent_sel_exit}
+;
+;
+[screen getcpydisname1]
+{include screen header}
+{at 31,1}
+Owner Information
+{at 31,2}
+{line 17,177}
+{at 6,5}
+Type your full name or the name of the company that purchased
+Microsoft Visual Basic for MS-DOS 1.00. The name you type will
+be used by the Setup program for subsequent installations of
+the program and will appear in the Visual Basic program itself.
+
+You must type a non-blank name before Setup can continue. You may
+use as many as 50 upper and lower case characters or blank spaces.
+
+{input 15,50,1}
+
+
+When you have finished, press Enter.
+{include screen ent_exit}
+;
+;
+[screen getcpydisname2]
+{include screen getcpydisname1}
+;
+;
+[screen getcpydisname3]
+{include screen header}
+{at 31,1}
+Owner Information
+{at 31,2}
+{line 17,177}
+{at 6,5}
+Please verify that the name you entered is correct.
+
+If you need to change the name, please change it now.
+
+
+{input 15,50,1}
+
+
+When you have finished, press Enter.
+{include screen ent_exit}
+;
+;
+[screen getcpydisname4]
+{include screen getcpydisname3}
+;
+;
+[screen usedsuini]
+{include screen header}
+{at 31,1}
+Reinstallation Warning
+{at 31,2}
+{line 22,177}
+{at 6,5}
+Setup has detected that this disk set has already been used to
+install Microsoft Visual Basic for MS-DOS 1.00 by:
+   %DFILE
+It is acceptable for the legal owner to reinstall Visual Basic
+in order to update an existing copy or to replace a corrupted
+or missing version of the program.
+
+You can continue to install Visual Basic, but you should be aware 
+that this program is protected by copyright law and international 
+treaties. Unauthorized reproduction or distribution of this program 
+or any portion of it may result in severe civil and criminal 
+penalties and will be prosecuted to the maximum extent under law.
+
+
+Press Enter to continue with Setup.
+{include screen ent_exit}
+
+[screen corruptedsuini]
+{include screen header}
+{at 31,1}
+Reinstallation Warning
+{at 31,2}
+{line 22,177}
+{at 6,5}
+Setup has detected that this disk set may already have been used
+to install Microsoft Visual Basic for MS-DOS 1.00. It is acceptable 
+for the legal owner to reinstall Visual Basic in order to update 
+an existing copy or to replace a corrupted or missing version 
+of the program.
+
+You can continue to install Visual Basic, but you should be aware 
+that this program is protected by copyright law and international 
+treaties. Unauthorized reproduction or distribution of this program 
+or any portion of it may result in severe civil and criminal 
+penalties and will be prosecuted to the maximum extent under law.
+
+
+Press Enter to continue with Setup.
+{include screen ent_exit}
+;
+;
+; required
+[screen nonvital]
+{clear 0,0,0,0}
+;
+[screen pathtoolong]
+; screen used by floppy-to-floppy setup only
+[screen insnewdisk]
+;
+;
+[screen readonlyerr]
+{include screen header}
+{include screen installing}
+{At 5,6}
+Setup is trying to copy to the read-only file
+%DPATH%DFILE on your hard disk.
+
+You can try to overwrite this file, skip the copy if you are sure
+this file is correct, or exit Setup and delete the file.
+
+{input 25,30,5}
+{include menu readonlyerrm}
+{include screen ent_sel_exit}
+;
+;
+[screen readonly_h]
+{color black, white}
+{at 5,4}
+;
+;
+;  VBDOS SCREENS
+;
+[screen welcome]
+{include screen header}
+{at 31,1}
+Serial Number: %SERIALNUM
+{at 31,2}
+{line 35,177}
+{at 5,4}
+Microsoft Visual Basic for MS-DOS Professional Edition Version 1.00.
+%COPYRIGHT
+
+The files on the distribution disks are compressed, so you must
+use Setup to install them. If you make a mistake, you can press 
+Ctrl+C at any time to quit and start over. Setup never erases 
+files from the distribution disks. In addition, Setup will ask 
+you for confirmation before any files are installed.
+
+To install Visual Basic for MS-DOS for the first time, select the install
+option. To install additional math libraries or change ISAM character 
+set support, select the build additional libraries option. Use arrow 
+keys to select one of the following, then press Enter.
+
+{input 11,55,10}
+{include menu mainc}
+{include screen ent_sel_exit}
+;
+;
+[screen typedir]
+Setup proposes the following directory:
+
+{input 3,55,1}
+
+If the directory does not exist, it will be created.
+
+If you want to install these files in a different directory, use
+the backspace key to erase the current selection, then type the new
+directory name. When the correct directory is displayed, press
+Enter.
+{include screen ent_exit}
+;
+;
+[screen dirinc]
+{include screen header}
+{at 31,1}
+Set Include Path
+{at 31,2}
+{line 16,177}
+{at 5,6}
+Specify the directory in which to place include and source files.
+
+{include screen typedir relative}
+;
+;
+[screen baddrive]
+{include screen header}
+{at 31,1}
+Hard Disk Required
+{at 31,2}
+{line 18,177}
+{at 0,8}
+{center on}
+A valid hard disk drive must be specified for all install directories.
+{center off}
+{include screen ent_exit}
+
+[screen dirbin]
+{include screen header}
+{at 31,1}
+Set Executable Path
+{at 31,2}
+{line 19,177}
+{at 5,6}
+Specify the directory in which to place executable files.
+
+{include screen typedir relative}
+;
+;
+[screen dirlib]
+{include screen header}
+{at 31,1}
+Set Library Path
+{at 31,2}
+{line 16,177}
+{at 5,6}
+Specify the directory in which to place library files.
+
+{include screen typedir relative}
+;
+;
+[screen dirhelp]
+{include screen header}
+{at 31,1}
+Set Help Path
+{at 31,2}
+{line 13,177}
+{at 5,6}
+Specify the directory in which to place help files.
+
+{include screen typedir relative}
+;
+;
+[macro]
+; strings used to init the confirm listbox
+INSTALL    = "Install "
+NOINSTALL  = "Do not install "
+COPY       = "Copy "
+NOCOPY     = "Do not copy "
+
+NOCHANGES     = "No Changes"
+
+INSTALLDOCS   = "documentation files"
+INSTALLSAMPLES= "sample programs"
+
+[screen confirm]
+{include screen header}
+{at 31,1}
+Confirm Install Options
+{at 31,2}
+{line 23,177}
+{at 5,6}
+If you are satisfied with your responses, press Enter to continue.
+Otherwise, use the arrow keys to select the option to change and
+press Enter.
+
+{input 2,77,17}
+; menu is built on the fly
+{include screen ent_sel_exit}
+;
+;
+[screen freespace]
+{include screen header}
+{include screen installing}
+{at 5,6}
+There is not enough free disk space on drive %DRIVE to install
+Microsoft Visual Basic for MS-DOS 1.00 as specified. Another 
+%NUM K of disk space is needed. You may either exit Setup and 
+delete files to free up the needed disk space, select a different 
+destination drive with more available disk space, or continue 
+until the disk is full.
+
+NOTE, Setup will not install to a removable hard drive.  If you are 
+attempting to install to this type of drive, exit Setup now and 
+run ALTSETUP.BAT on Disk 1.
+
+{input 15,46,6}
+; menu 'anotherhd' is used if > 1 hard disk, else menu 'smallhd' goes here
+{include screen ent_sel_exit}
+;
+;
+[macro]
+MDIRBIN = ""
+NEWAUTOEXEC = "NEW-VARS.BAT"
+;NEWCONFIG = "NEW-CONF.SYS"
+;
+[screen newvars]
+{include screen header}
+{at 31,1}
+Installation Complete
+{at 31,2}
+{line 21,177}
+{At 5,4}
+Microsoft Visual Basic for MS-DOS Professional Edition 
+Version 1.00 has been successfully installed.
+
+For best results, the INCLUDE, LIB, and PATH environment
+variables should be set to reflect this installation.
+^1%MDIRBIN%NEWAUTOEXEC^0 is an MS-DOS batch file that sets
+these variables. This file can be used from the MS-DOS command
+line or it can be appended to an existing AUTOEXEC.BAT file.
+
+
+Press Enter to continue.
+{include screen ent_exit}
+;
+;
+[screen installcanceled]
+{include screen header}
+{at 31,1}
+Installation Canceled
+{at 31,2}
+{line 22,177}
+{at 5,6}
+Setup was canceled. Microsoft Visual Basic for MS-DOS 1.00
+is not installed properly on your system.
+
+To install Visual Basic, run Setup again.
+
+
+Press Enter to exit Setup.
+;
+;
+[macro]
+NUMERRORS = "0"
+NUMFILES  = "0"
+
+[screen installerrs]
+{include screen header}
+{at 31,1}
+Installation Errors
+{at 31,2}
+{line 19,177}
+{At 5,6}
+Setup has not completely installed Visual Basic for MS-DOS 1.00. 
+There were %NUMERRORS errors detected while copying files, and 
+%NUMFILES files were not installed because of those errors.
+
+Visual Basic may not work correctly if it is not properly
+installed. Please run Setup again after correcting the problems.
+
+
+Press Enter to exit Setup.
+;
+;
+[screen mult_linkers]
+{include screen header}
+{include screen installing}
+{At 5,8}
+WARNING: Setup has found multiple linkers in your path. For
+best results, be sure to use the LINK.EXE that comes with
+Microsoft Visual Basic for MS-DOS 1.00 when linking programs 
+compiled with Visual Basic.
+
+
+Press Enter to continue with Setup.
+{include screen ent_exit}
+;
+;
+[screen installworked]
+{at 2,0}
+To start Microsoft Visual Basic, type ^1VBDOS^0 at the MS-DOS prompt.
+Visual Basic has two working environments: the Programming Environment and
+the Form Designer. You switch between the two as you develop applications.
+
+     ^1PROGRAMMING ENVIRONMENT^0                          ^1FORM DESIGNER^0
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»    Alt+F, F     ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º ÚÄÄ[1]UntitledÄÄ¿ÚProject¿ º    Shift+F12    º ÚTools¿ÚÄÄÄ Form1 ÄÄ¿ º
+ º ³°°°°°°°°°°°°°°°³³°°°°°°°³ º    -> -> ->     º ³°°°°°³³°°°°°°°°°°°°³ º
+ º ³°°°°°°°°°°°°°°°³³°°°°°°°³ º                 º ³°°°°°³³°°°°°°°°°°°°³ º
+ º ³°°°°°°°°°°°°°°°³³°°°°°°°³ º    <- <- <-     º ³°°°°°³³°°°°°°°°°°°°³ º
+ º ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙÀÄÄÄÄÄÄÄÙ º      F12        º ÀÄÄÄÄÄÙÀÄÄÄÄÄÄÄÄÄÄÄÄÙ º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼     Alt+F4      ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+ - Add new form and code modules                - Create and edit forms
+ - Write, run, and debug code                   - Draw controls
+ - Create EXE files                             - Set properties and colors
+
+To learn about the two environments, run the tutorial and see Chapter 1
+"Installing and Running Visual Basic" in the Programmer's Guide.
+
+{input 15, 48, 4}
+{include screen ent_sel_exit}
+;
+;
+[menu mathmenu]
+"80x87 or Emulator Math"
+"Alternate Math         /FPa"
+
+[menu isammenu]
+"English, French, German, Italian, Portuguese"
+"Dutch"
+"Danish, Finnish, Icelandic, Norwegian, Swedish"
+"Spanish"
+;
+;
+;
+[screen mathoptns]
+{include screen header}
+{at 31,1}
+Math Support
+{at 31,2}
+{line 12,177}
+{at 5,6}
+Specify one or more math support options. 80x87 or Emulator math will
+detect and use a math coprocessor, if present. Otherwise, it will 
+emulate a coprocessor. Alternate math is much faster than emulation for
+machines without a coprocessor. Currency datatype support is only 
+available with 80x87 or Emulator math.
+
+Use arrow keys to move between math support options. Press Spacebar 
+to toggle option selection, then press Enter.
+
+{input 24,37,17}
+{include menu mathmenu}
+{include screen ent_sel_exit}
+;
+;
+[screen isamoptns]
+{include screen header}
+{at 31,1}
+ISAM Character Set Support
+{at 31,2}
+{line 26,177}
+{at 5,6}
+Specify ISAM character set and sorting order. Setup installs the
+correct ISAM Library support for the language group you choose.
+Databases created with a particular character set are not compatible 
+with databases created with other character sets. The correct ISAM 
+libraries must be used to manipulate each database. You can re-run
+Setup to install different ISAM character set support.
+
+Use arrow keys to select one of the following, then press Enter.
+
+{input 10, 55, 17}
+{include menu isammenu}
+{include screen ent_sel_exit}
+;
+;
+[screen libworked]
+{include screen header}
+{at 31,1}
+Library Installation Complete
+{at 31,2}
+{line 29,177}
+{At 5,6}
+Microsoft Visual Basic for MS-DOS Professional Edition  
+Version 1.00 libraries have been successfully installed.
+
+For best results, the INCLUDE, LIB, and PATH environment
+variables should be set to reflect this installation.
+
+
+Press Enter to exit Setup.
+;
+;
+
